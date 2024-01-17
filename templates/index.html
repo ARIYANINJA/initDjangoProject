@@ -7,5 +7,13 @@
   </head>
   <body>
     <h1>hello {{request.user}} from render</h1>
+    <p>
+      my name is {{name}} i am {{age}} years old , my phone number is {{phone}}
+    </p>
+    <ul style="list-style: none">
+      {%for number in list %}
+      <li>{{number}}</li>
+      {%endfor%}
+    </ul>
   </body>
 </html>

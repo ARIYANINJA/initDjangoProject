@@ -17,7 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from product.views import home_page
+from product.views import productDetail
 urlpatterns = [
-    path('', home_page, name = 'hello'),
+    path('', home_page),
     path('admin/', admin.site.urls),
+    path('productDetail/', productDetail)
 ]
