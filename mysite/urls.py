@@ -24,4 +24,5 @@ urlpatterns = [
     path("detail/", productDetail),
     path("create/", productCreate),
     path("polls/", include("polls.urls")),
+    path("product/", include("product.urls")),
 ]
