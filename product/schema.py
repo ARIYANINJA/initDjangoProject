@@ -1,6 +1,6 @@
 import graphene
 import graphene_django
-from .models import Book
+from .models import Book, Product
 
 
 class BookType(graphene_django.DjangoObjectType):
@@ -9,11 +9,21 @@ class BookType(graphene_django.DjangoObjectType):
         fields = "__all__"
 
 
+class ProductType(graphene_django.DjangoObjectType):
+    class Meta:
+        model = Product
+        fields = "__all__"
+
+
 class Query(graphene.ObjectType):
     books = graphene.List(BookType)
+    products = graphene.List(ProductType)
 
     def resolve_books(self, info):
         return Book.objects.all()
+
+    def resolve_products(self, info):
+        return Product.objects.all()
 
 
 class CreateBook(graphene.Mutation):
