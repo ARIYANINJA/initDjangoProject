@@ -1,0 +1,10 @@
+.coverage
+.venv/
+coverage.xml
+db.sqlite3
+__pycache__/
+.ruff_cache
+.idea/
+public_html
+.DS_Store
+node_modules
