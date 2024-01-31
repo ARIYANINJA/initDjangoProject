@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from .models import Product
+from .models import Product, GeeksModel
 from .forms import ProductForm
+from django.views.generic.list import ListView
 
 
 # Create your views here.
@@ -24,3 +25,8 @@ def productDetail(request):
     obj = Product.objects.get(id=1)
     info = {"object": obj}
     return render(request, "product_detail.html", info)
+
+
+class GeeksList(ListView):
+    # specify the model for list view
+    model = GeeksModel
