@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Product, GeeksModel
 from .forms import ProductForm
 from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 
 
 # Create your views here.
@@ -29,4 +30,9 @@ def productDetail(request):
 
 class GeeksList(ListView):
     # specify the model for list view
+    model = GeeksModel
+
+
+class GeeksDetailView(DetailView):
+    # specify the model to use
     model = GeeksModel
