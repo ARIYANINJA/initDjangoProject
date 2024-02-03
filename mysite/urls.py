@@ -26,7 +26,7 @@ from product.views import (
 
 urlpatterns = [
     path("", GeeksList.as_view()),
-    path("<pk>/", GeeksDetailView.as_view()),
+    path("article/<pk>/", GeeksDetailView.as_view()),
     path("admin/", admin.site.urls),
     path("detail/", productDetail),
     path("create/", productCreate),
